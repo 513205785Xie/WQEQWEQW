@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>3d魔方</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+		body{
+			-webkit-perspective: 1000px;
+			background-color: #000;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		.box{
+			position: relative;
+			width: 200px;
+			height: 200px;
+			/* border: 1px solid red; */
+			margin: 200px auto 0;
+			-webkit-transform-style: preserve-3d;
+			-webkit-transform: rotateX(-24deg);
+			-webkit-animation: move 10s linear infinite ;
+		}
+		.list{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			left: 50px;
+			top: 50px;
+			-webkit-transform-style: preserve-3d;
+		}
+		.list li{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		.list li:nth-child(1){
+			background-color: #D06A6A;
+			-webkit-transform: translateZ(50px);
+		}
+		.list li:nth-child(2){
+			background-color: #8F9E96;
+			-webkit-transform: rotateX(180deg) translateZ(50px);
+		}
+		.list li:nth-child(3){
+			background-color: #4F319F;
+			-webkit-transform: rotateY(-90deg) translateZ(50px);
+		}
+		.list li:nth-child(4){
+			background-color: #E09753;
+			-webkit-transform: rotateY(90deg) translateZ(50px);
+		}
+		.list li:nth-child(5){
+			background-color: #5C293B;
+			-webkit-transform: rotateX(90deg) translateZ(50px);
+		}
+		.list li:nth-child(6){
+			background-color: #217D50;
+			-webkit-transform: rotateX(-90deg) translateZ(50px);
+		}
+		
+		
+		.after{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 200px;
+			height: 200px;
+			-webkit-transform-style: preserve-3d;
+		}
+		.after li{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			background: #FFF;
+			opacity: 0.3;
+			-webkit-transition: all 1s linear  ;
+		}
+		.after li:nth-child(1){
+			-webkit-transform: translateZ(100px);
+		}
+		.box:hover .after li:nth-child(1){
+			-webkit-transform: translateZ(200px);
+		}
+
+		.after li:nth-child(2){
+			-webkit-transform: rotateX(180deg) translateZ(100px);
+		}
+		.box:hover .after li:nth-child(2){
+			-webkit-transform: rotateX(180deg) translateZ(200px);
+		}
+
+		.after li:nth-child(3){
+			-webkit-transform: rotateY(-90deg) translateZ(100px);
+		}
+		.box:hover .after li:nth-child(3){
+			-webkit-transform: rotateY(-90deg) translateZ(200px);
+		}
+
+		.after li:nth-child(4){
+			-webkit-transform: rotateY(90deg) translateZ(100px);
+		}
+		.box:hover .after li:nth-child(4){
+			-webkit-transform: rotateY(90deg) translateZ(200px);
+		}
+
+		.after li:nth-child(5){
+			-webkit-transform: rotateX(90deg) translateZ(100px);
+		}
+		.box:hover .after li:nth-child(5){
+			-webkit-transform: rotateX(90deg) translateZ(200px);
+		}
+
+		.after li:nth-child(6){
+			-webkit-transform: rotateX(-90deg) translateZ(100px);
+		}
+		.box:hover .after li:nth-child(6){
+			-webkit-transform: rotateX(-90deg) translateZ(200px);
+		}
+		
+		@-webkit-keyframes move{
+			0%{-webkit-transform:rotateY(0deg) rotateX(-24deg)}
+			50%{-webkit-transform:rotateY(180deg) rotateX(24deg)}
+			100%{-webkit-transform:rotateY(360deg) rotateX(-24deg)}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="list">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="after">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	
+</body>
+</html>
